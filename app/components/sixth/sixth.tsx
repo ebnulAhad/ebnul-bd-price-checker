@@ -8,18 +8,26 @@ function Sixth() {
       if (e.classList.contains('inactive')) {
         e.classList.remove('inactive');
         e.classList.add('active');
-      } else {
-        e.classList.remove('active');
+        e.classList.add('glow');
+      } 
+      else if(e.classList.contains('glow')){
+        e.classList.remove('glow');
         e.classList.add('inactive');
-      }
+        e.classList.remove('active');
+      }      
+
     });
   }
 
+  function pop() {
+    const glow = document.querySelector('.circle-sm');
+    glow.classList.toggle('glow');
+  }
   
   return (
     <div className="signup">
-      <div className="circle circle-sm">
-        <button onClick={login} id="login">Sign up</button>
+      <div onClick={pop} className="circle circle-sm">
+        <button onClick={login} >Sign up</button>
         <div className="line line-1 inactive"></div>
       </div>
 
@@ -32,8 +40,9 @@ function Sixth() {
         </div>
       </div>
 
-      <div className="circle circle-m line line-4 inactive ot"><Link href={"#"} className="fp">Forgot Password?</Link></div>
-      <div className="circle circle-s inactive ot"><Link href={"#"}>Login</Link></div>
+      <div className="circle circle-m line line-4 inactive other-line"><Link href={"#"} className="forgot-pass">Forgot Password?</Link></div>
+      <div className="circle circle-s inactive other-line"><Link href={"#"}>Login</Link></div>
+
     </div>
   );
 }
