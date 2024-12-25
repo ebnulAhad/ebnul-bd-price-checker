@@ -17,7 +17,7 @@ body {
 .signup > div {
   margin-top: 100px;
   margin-bottom: 15px;
-  margin-left: 318px
+  margin-left: 318px;
 }
 
 
@@ -132,6 +132,10 @@ button{
   rotate: -79deg;
 }
 
+.line-5::after{
+  display: none;
+}
+
 .inactive {
   visibility: hidden;
   opacity: 0;
@@ -158,7 +162,7 @@ button{
   height: 70px;
   width: 70px;
 }
-.active.line::after{
+.glow::after{
   height: 100px;
   transition: all 0.7s linear;
 }
@@ -181,7 +185,7 @@ input::placeholder {
   color: black;
 }
 
-@keyframes gravityHover {
+ @keyframes gravityHover {
   0% {
     transform: translateY(0);
   }
@@ -191,7 +195,101 @@ input::placeholder {
   100% {
     transform: translateY(0);
   }
+} 
+.noline:after {
+  top: 0%;
+  left: 0%;
+  rotate: 0deg;
+  opacity: 0;
 }
 
+@media (max-width: 768px) {
+  body {
+    background-image: linear-gradient(to top, #3c3c3c, #626262, #8c8c8c, #b7b7b7, #e5e5e5, #b7b7b7, #8c8c8c, #626262, #3c3c3c);
+  }
 
+  .signup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
+  .signup > div {
+    margin-top: 100px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+  }
+  .circle-sm{
+    left: -8px;
+  }
+  .circle-L{
+    height: 170px;
+    width: 170px;
+    left: 150px;
+    top: 0px;
+    margin-left: -25.5px;
+  }
+  
+  .circle-L1{
+    height: 170px;
+    width: 170px;
+    left: -75%;
+    bottom: 170px;
+  }
+  
+  
+  .circle-m{
+    height: 110px;
+    width: 110px;
+    left: 0%;
+    bottom: 183px;
+    left: -3px;
+  }
+  
+  .circle-s{
+    height: 70px;
+    width: 70px;
+    left: 0%;
+    bottom: 182px;
+    left: -2px;
+  }
+
+    .line-1::after {
+    top: 108px;
+    rotate: -40deg;
+    left: 100px;
+    transform: scaleY(0.7);
+  }
+  
+  .line-2::after {
+    top:186px;
+    left: 43px;
+    rotate: 39deg;
+    transform: scaleY(0.7);
+  }
+  
+  
+  .line-3::after {
+    top: -81px;
+    left: 155px;
+    rotate: 40deg;
+    transform: scaleY(0.7);
+  }
+  
+  
+  .line-4::after {
+    top: -69px;
+    left: -30px;
+    rotate: -39deg;
+    transform: scaleY(0.7);
+  }
+  .line-5::after{
+    top: -86px;
+    left: 33px;
+    opacity: 1;
+    transform: scaleY(0.7);
+  }
+
+ 
+
+}
